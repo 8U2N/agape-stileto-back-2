@@ -5,7 +5,7 @@ from flask_cors import CORS
 
 app = Flask(__name__)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://tlhtsgjbmaunko:a70801b2ced46b82a107b578e9e40a8d614a8222491d45da6d6730ea6bccdeec@ec2-54-211-255-161.compute-1.amazonaws.com:5432/da86s525seb2f9'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://zawctxuebfvpuj:3f455333ddbd196a5168773e54798d8f2ce820e0f862e151ac888dbc981947a1@ec2-54-227-248-71.compute-1.amazonaws.com:5432/dfuhcjv88o6bn3'
 
 db = SQLAlchemy(app)
 ma = Marshmallow(app)
@@ -55,7 +55,7 @@ class Painting(db.Model):
     color = db.Column(db.String(30), unique=False)
     medium = db.Column(db.String(30), unique=False, nullable=False)
     description = db.Column(db.String(255), unique=False, nullable=False)
-    # carts = db.relationship('Cart', backref='painting')
+    
 
     def __init__(self, image_url, price, name, color, medium, description):
         self.image_url = image_url
